@@ -22,10 +22,10 @@ def run_main(stop_service: bool):
     model_name = "prices_predictor"
 
     if stop_service:
-        # Get the MLflow model deployer stack component
+        
         model_deployer = MLFlowModelDeployer.get_active_model_deployer()
 
-        # Fetch existing services with same pipeline name, step name, and model name
+        
         existing_services = model_deployer.find_model_server(
             pipeline_name="continuous_deployment_pipeline",
             pipeline_step_name="mlflow_model_deployer_step",
@@ -37,13 +37,12 @@ def run_main(stop_service: bool):
             existing_services[0].stop(timeout=10)
         return
 
-    # Run the continuous deployment pipeline
+    
     continuous_deployment_pipeline()
 
-    # Get the active model deployer
+    
     model_deployer = MLFlowModelDeployer.get_active_model_deployer()
 
-    # Run the inference pipeline
     inference_pipeline()
 
     print(
@@ -54,7 +53,6 @@ def run_main(stop_service: bool):
         "experiment. Here you'll also be able to compare the two runs."
     )
 
-    # Fetch existing services with the same pipeline name, step name, and model name
     service = model_deployer.find_model_server(
         pipeline_name="continuous_deployment_pipeline",
         pipeline_step_name="mlflow_model_deployer_step",

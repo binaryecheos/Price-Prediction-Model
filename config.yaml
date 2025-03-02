@@ -5,7 +5,6 @@ settings:
     required_integrations:
       - mlflow
 
-# Configuration of the Model Control Plane
 model:
   name: prices_predictor
   license: Apache 2.0
