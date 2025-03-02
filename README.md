@@ -1,7 +1,7 @@
 # Price Prediction Model  
 
 ## Overview  
-This project is a machine learning pipeline for predicting prices based on input features. It utilizes MLflow for experiment tracking and includes a deployment script for serving predictions.  
+This project is currently in development and aims to build a machine learning pipeline for predicting prices based on input features. It integrates MLflow for experiment tracking and includes a deployment script for serving predictions.  
 
 ## Features  
 - **ML Pipeline**: Trains a model for price prediction.  
